@@ -1,0 +1,134 @@
+/* design a responsive navbar */
+
+/* reset all browser styling and choose alt box model option */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* style the layout of the navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: rgb(46, 152, 46);
+  color: aquamarine;
+}
+
+.nav-links a {
+  color: #fff;
+}
+
+/* styling your logo */
+.logo {
+  font-size: 32px;
+}
+
+/* Style the navbar menu */
+.menu {
+  display: flex;
+  gap: 1em;
+  font-size: 18px;
+}
+
+/* example of pseudo class usage in css */
+.menu li:hover {
+  background-color: blue;
+  border-radius: 5px;
+  /* example of css transition */
+  transition: 0.3s ease;
+}
+.menu li {
+  padding: 5px 14px;
+}
+
+/* dropdown menu */
+.services {
+  position: relative;
+}
+
+.dropdown {
+  background-color: blueviolet;
+  padding: 1EM 0;
+  position: absolute; /relative to the parent*/
+  display: none;
+  border-radius: 8px;
+  top: 35px;
+}
+
+.dropdown li+li {
+    margin-top: 10px;
+}
+
+.dropdown li{
+    padding: 0.5em 1em;
+    width: 8em;
+    text-align: center;
+}
+
+.dropdown li:hover{
+    background-color: #4c9e9e;
+}
+
+.services:hover .dropdown {
+    display: block;
+}
+
+/* responsive styling for the navbar */
+
+input[type=checkbox]{
+    display:none;
+    font-size: 24px;
+    user-select: none;
+}
+
+/* responsive design using css media queries */
+@media (max-width: 768px) {
+    .menu{
+        display: none;
+        position: absolute;
+        background-color: bisque;
+        right: 0;
+        left: 0;
+        text-align: center;
+        padding: 16px 0;        
+    }
+    .menu li:hover{
+        display: inline-block;
+        background-color: beige;
+        transition: 0.3s ease;
+    }
+.menu li+li{
+    margin-top: 12px;
+}
+input[type=checkbox]:checked ~ .menu{
+    display: block;
+}
+.hamburger {
+    display: block;
+}
+.dropdown{
+    left: 50%;
+    right: 30px;
+    transform: translateX(35%);
+}
+
+.dropdown li:hover {
+    background-color: blanchedalmond;
+}
+}
