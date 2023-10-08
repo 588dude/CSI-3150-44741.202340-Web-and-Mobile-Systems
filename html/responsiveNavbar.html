@@ -7,6 +7,12 @@
 
     <!--CSS file-->
     <link rel="stylesheet" href="../css/responsiveNavbarStyle.css" />
+    <style>
+      /* This is how we hide the dropdown box initially */
+      ul.dropdown {
+        display: none;
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar"></nav>
@@ -36,5 +42,12 @@
         <li><a href="/">Contact</a></li>
       </div>
     </ul>
-  </body>
+    <!--Here we use JavaScript to toggle the dropdown-->
+    <script>
+      //Grab the "Services" link and dropdown menu
+      servicesLink.addEventListener('click', () => {
+        dropdown.style.display = dropdown.style.displayy === 'block' ? 'none' : 'block';
+      });
+    </script>
+</body>
 </html>
